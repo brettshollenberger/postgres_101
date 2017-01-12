@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo "Recreating DB" && dropdb --if-exists postgres_101 > /dev/null && createdb postgres_101 && echo "OK"

@@ -1,0 +1,5 @@
+CREATE TABLE friends (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  friend_count INTEGER DEFAULT 0
+);

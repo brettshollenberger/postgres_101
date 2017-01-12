@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# set -eo pipefail
+
+# The files in this directory
+# start with leading zeroes
+# in order to keep them ordered
+# numerically.
+#
+# Use this script whenever you hit
+# a new digit, e.g. (10, 100, 1000)
+# to rename all existing folders.
+#
+# Then grep for files, open them in splits,
+# and run :%s/0\(\d*\)/00\1/g 
+# on the files
+#
+num_zeros=$(ls | grep 0*1_ | sed 's/\(0*\).*/\1/g' | sed 's/0/0 /g' | wc -w)
+regex='^\d{'$(expr $num_zeros + 1)'}_'
+
+for file in $( ls $(pwd) | grep -E $regex ); do
+  echo "mv $(echo {,0}$file)"
+  mv {,0}$file
+done

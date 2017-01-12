@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+cleandb
+
+if [ -f $(pwd)/create.sql ]; then
+  echo "Creating tables"
+  psql -d postgres_101 -f $(pwd)/create.sql
+  echo "OK"
+else
+  echo "No tables to create"
+fi

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+setup_example && echo "Inserting test data" && psql -d postgres_101 -f $(pwd)/insert.sql && echo "OK"

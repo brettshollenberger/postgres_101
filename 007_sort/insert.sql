@@ -1,0 +1,29 @@
+INSERT INTO friends (name, friend_count) VALUES
+(
+  'Corey',
+  553
+),
+(
+  'Tag',
+  3149
+),
+(
+  'Sean',
+  234
+),
+(
+  'Crowe',
+  123
+),
+(
+  'Cambria',
+  23100
+),
+(
+  'Sophia',
+  2131
+), 
+(
+  'Andrew',
+  2131
+);

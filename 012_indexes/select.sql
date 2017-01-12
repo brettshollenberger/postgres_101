@@ -1,0 +1,7 @@
+EXPLAIN SELECT COUNT(*)
+FROM movies
+WHERE year = 1950;
+
+EXPLAIN SELECT COUNT(*)
+FROM movies
+WHERE title = 'America';

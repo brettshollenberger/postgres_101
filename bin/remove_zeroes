@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+num_zeros=$(ls | grep 0*1_ | sed 's/\(0*\).*/\1/g' | sed 's/0/0 /g' | wc -w)
+regex='^\d{'$(expr $num_zeros + 1)'}_'
+
+for file in $( ls $(pwd) | grep -E $regex ); do
+  echo "mv $file $(echo $file | sed 's/^0//')"
+  mv $file $(echo $file | sed 's/^0//')
+done
